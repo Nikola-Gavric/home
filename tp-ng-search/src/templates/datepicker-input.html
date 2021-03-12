@@ -1,0 +1,18 @@
+<div class="twidget-input-box">
+    <label ng-click="$ctrl.popover.toggle()">{{$ctrl.parent.translate($ctrl.label)}}</label>
+    <div class="twidget-input-box-show-popup" ng-click="$ctrl.popover.toggle()">
+        <input type="text">
+        <div class="twidget-icon-cal" ng-show="$ctrl.key === 'rangeStart'"></div>
+        <div class="twidget-icon-cal" ng-hide="$ctrl.value || $ctrl.key === 'rangeStart'"></div>
+        <span class="twidget-date-text twidget-date-depart"
+              ng-hide="$ctrl.value"
+        >{{$ctrl.parent.translate($ctrl.label)}}</span>
+        <span ng-show="$ctrl.value"
+              class="twidget-date-text twidget-date-depart"
+        >{{$ctrl.value  | date:"d MMMM, EEE"}}</span>
+    </div>
+    <div class="twidget-icon-delete" ng-if="$ctrl.key === 'rangeEnd'" ng-show="$ctrl.value"
+         ng-click="$ctrl.value=null;"></div>
+</div>
+
+

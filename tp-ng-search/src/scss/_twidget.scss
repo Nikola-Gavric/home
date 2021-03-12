@@ -1,0 +1,521 @@
+/* reset.css start*/
+@import "datepicker";
+@import "autocomplete";
+/* reset.css end*/
+
+.clearfix {
+  &:after, &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.twidget-container {
+  font-family: 'Open Sans', arial, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: #424242;
+  padding-top: 0;
+  width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  input {
+    &[type="text"], &[type="email"], &[type="date"] {
+      border: none;
+      outline: none;
+      background-color: #fff;
+      color: #424242;
+      font-family: 'Open Sans', arial, sans-serif;
+      font-size: 14px;
+    }
+    &::-ms-clear {
+      display: none;
+    }
+  }
+  .input-daterange input {
+    text-align: left;
+    font-size: 0;
+    z-index: 1;
+  }
+
+}
+
+/*tab content*/
+
+.twidget-tab-content, .multi-city-view {
+  padding: 20px 0;
+  border-radius: 0 3px 3px 3px;
+  input[type="text"] {
+    line-height: 50px;
+    height: 50px;
+    padding: 0 37px 0 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  button {
+    font-family: 'Open Sans', arial, sans-serif;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    background: none;
+  }
+
+}
+
+.twidget-city {
+  .twidget-pseudo-input {
+    position: absolute;
+    top: 30px;
+    left: 13px;
+    font-family: 'Open Sans', arial, sans-serif;
+    width: 77%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-height: 16px;
+    .twidget-pseudo-name {
+      color: transparent;
+      white-space: nowrap;
+    }
+  }
+  .twidget-origin-iata, .twidget-destination-iata {
+    position: absolute;
+    right: 10px;
+    line-height: 50px;
+    margin-top: -48px;
+    font-size: 12px;
+    color: #999;
+  }
+}
+
+.twidget-city, .twidget-flight-dates {
+  .twidget-input-box {
+    input {
+      width: 100%;
+      border: 1px solid #fff;
+      &:focus {
+        border-color: #fdd835;
+      }
+    }
+    label {
+      color: white;
+      position: relative;
+      top: -4px;
+      font-size: 12px;
+      display: block;
+    }
+
+  }
+
+}
+
+.twidget-tab-content .twidget-form-list,
+.multi-city-view .twidget-form-list {
+  > li {
+    float: left;
+    margin-right: 1%;
+    position: relative;
+    &.twidget-flight-dates {
+      width: 27%;
+      position: inherit;
+    }
+    &.twidget-passengers {
+      width: 13%;
+    }
+    &.twidget-submit-button {
+      width: 18%;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    button {
+      height: 50px;
+      margin-top: 12px;
+      line-height: 50px;
+      text-align: center;
+      width: 100%;
+      text-transform: uppercase;
+      background-color: #ffa600;
+      color: #fff;
+    }
+    &.input-daterange > .twidget-form-item {
+      float: left;
+      width: 50%;
+    }
+    &.twidget-flight-dates .twidget-dep-date .twidget-input-box input, &.twidget-hotel-dates .twidget-start-date .twidget-input-box input {
+      border-right: 1px solid #cfd8dc;
+    }
+    &.twidget-flight-dates .twidget-dep-date .twidget-input-box input:focus, &.twidget-hotel-dates .twidget-start-date .twidget-input-box input:focus {
+      border-right-color: #fdd835;
+    }
+  }
+}
+
+
+.twidget-flight-dates {
+  .twidget-input-box {
+    position: relative;
+    .twidget-icon-cal {
+      background: url(../images/calendar.svg) no-repeat 50% 50%;
+      position: absolute;
+      right: 0;
+      top: 12px;
+      height: 50px;
+      width: 40px;
+      background-size: 20px;
+      cursor: pointer;
+    }
+    .twidget-icon-delete {
+      background: url(../images/icon-delete.svg) no-repeat 50% 50%;
+      position: absolute;
+      right: 0;
+      top: 12px;
+      height: 50px;
+      width: 40px;
+      background-size: 15px;
+      cursor: pointer;
+    }
+  }
+  .twidget-date-text {
+    position: absolute;
+    left: 12px;
+    top: 31px;
+  }
+}
+
+@media (max-width: 1920px) {
+  .twidget-container {
+    width: 980px;
+  }
+  .twidget-tab-content .twidget-form-list li {
+    &.twidget-origin {
+      width: 18%;
+      margin-bottom: 15px;
+    }
+    &.twidget-destination {
+      width: 18%;
+      margin-bottom: 15px;
+    }
+    &.twidget-flight-dates {
+      width: 32%;
+    }
+    &.twidget-passengers {
+      width: 13%;
+    }
+    &.twidget-submit-button {
+      width: 15%;
+    }
+  }
+  .twidget-tab-content .twidget-tab-bottom {
+    height: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .twidget-container {
+    width: 900px;
+  }
+  .twidget-tab-content .twidget-form-list li {
+    &.twidget-origin {
+      width: 49.5%;
+      margin-bottom: 15px;
+    }
+    &.twidget-destination {
+      width: 49.5%;
+      margin-bottom: 15px;
+      margin-right: 0;
+    }
+    &.twidget-flight-dates {
+      width: 43%;
+    }
+    &.twidget-passengers {
+      width: 25%;
+    }
+    &.twidget-submit-button {
+      width: 30%;
+    }
+  }
+  .twidget-tab-content .twidget-tab-bottom {
+    height: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .twidget-container {
+    width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
+  .twidget-container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 700px) {
+  .twidget-container {
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .twidget-tab-content .twidget-form-list li {
+    &.twidget-origin, &.twidget-destination, &.twidget-passengers, &.twidget-flight-dates {
+      width: 49%;
+      margin-right: 2%;
+    }
+    &.twidget-passengers, &.twidget-destination {
+      margin-right: 0;
+    }
+    &.twidget-submit-button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  .twidget-form-list li .twidget-passengers-detail {
+    .twidget-pas-no, .twidget-class {
+      display: inline-block;
+      line-height: 36px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .twidget-tab-content .twidget-title {
+    display: none;
+  }
+  .twidget-tab-content .twidget-form-list > li {
+    width: 100% !important;
+    margin-bottom: 15px;
+    margin-right: 0 !important;
+    &:last-child {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .twidget-tab-content .twidget-form-list{
+    .twidget-dep-date {
+      margin-bottom: 15px;
+    }
+    .twidget-tab-links {
+      display: table;
+      width: 100%;
+      ul {
+        display: table-row;
+        li {
+          display: table-cell;
+          width: 50%;
+          a {
+            padding: 0;
+            text-indent: -9999px;
+            &:before {
+              left: calc(50% - 25px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .twidget-tab-content .twidget-form-list li.twidget-flight-dates {
+    > div {
+      width: 100%;
+    }
+    .twidget-tab-content .twidget-dep-date .twidget-input-box input {
+      border-right-color: #fff;
+      border-bottom: 1px solid #cfd8dc;
+    }
+  }
+}
+
+@media (max-width: 240px) {
+  .twidget-tab-content .twidget-header {
+    display: none;
+  }
+}
+
+.twidget-another { 
+  display: none;
+}
+
+.twidget-another .twidget-add-another-flight {
+  border-style:dashed;
+  border-width: 1px;
+  border-color:white; 
+  height:50px;
+  margin-top: 12px;
+  color: aliceblue;
+  text-align: center;
+  cursor: pointer;
+  background-color: #00b8dd;
+  padding-top: 16px;
+}
+
+.multi-city-view .twidget-form-list {
+    > li {
+      &.twidget-origin {
+        width: 32%;
+        margin-bottom: 15px;
+      }
+      &.twidget-destination {
+        width: 32%;
+        margin-bottom: 15px;
+      }
+      &.twidget-flight-dates {
+        width: 32%;
+      }
+      &.twidget-flight-dates .twidget-dep-date {
+        width:96%
+      }
+      &.twidget-flight-dates .twidget-return-date {
+        display: none;
+      }
+      &.twidget-another { 
+        display: block;
+        width: 65%;
+      }
+      &.twidget-passengers {
+        width: 31%;
+      }
+      &.twidget-submit-button {
+        width: 30%;
+        margin-left: 34%;
+      }
+    }
+  }  
+
+.change-area {
+  width: 100%;
+}
+
+.flights-to-multi {
+  display: inline-block;
+}
+
+.change-area .hide-item {
+  display:none;
+}
+
+.twidget-flights-link_to_multi, .twidget-flights-link_to_simple{
+  color:#ffffff;
+  font-size:14px;
+  padding-left:20px;
+  margin-top:8px;
+  z-index: 1;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.twidget-flights-link_to_multi.hidden, .twidget-flights-link_to_simple.hidden {
+  display: none;
+}
+
+.twidget-flights-link_to_multi:before {
+  background-image: url("../images/multi-city.svg") ;
+  filter: invert(1);
+}
+
+.twidget-flights-link_to_multi:before, .twidget-flights-link_to_simple:before {
+  position: absolute!important;
+  display: inline-block!important;
+  content: ''!important;
+  width: 17px!important;
+  height: 16px!important;
+  left: 0!important;
+}
+
+.twidget-flights-link_to_simple:before {
+  background-image: url("../images/simple-city.svg") ;
+  filter: invert(1);
+}
+
+.multi-city-view .twidget-flights-link_to_simple{
+  position: absolute;
+  bottom: 65px;
+}
+
+.search-form-tabs-list_item{
+  position: initial;
+  height: 35px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255,255,255,.2);
+  font-size: 14px;
+  background-color: rgba(0,0,0,0);
+  color: #ffffff;
+  box-shadow: none;
+  padding: 10px;
+
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.search-form-tabs-list_item.active{
+  background-color: rgba(255,255,255,0.2);
+}
+
+.multi-city-route-item {
+  width: 100%;
+}
+
+.mewtwo-flights-multi-segment-remove {
+  position: relative!important;
+  top: 0!important;
+  display: inline-block!important;
+  content: ''!important;
+  width: 100%!important;
+  max-width: 18px!important;
+  height: 50px!important;
+  background-size: 100% auto!important;
+  background-position: center!important;
+  background-repeat: no-repeat!important;
+  cursor: pointer!important;
+
+  filter: invert(1) saturate(5) sepia(10);
+  background-image: url("../images/remove-row.svg") ;
+}
+
+.twidget-form-list .twidget-form-list {
+  padding-left: 0px;
+}
+
+.multi-city-form .twidget-form-list .twidget-form-list .twidget-remove-row {
+  width: 20px;
+}
+
+.multi-city-form .twidget-form-list .twidget-form-list .twidget-flight-dates {
+  width: 30%;
+}
+
+.multi-city-form .twidget-form-list .twidget-passengers {
+  width: 29%!important;
+}

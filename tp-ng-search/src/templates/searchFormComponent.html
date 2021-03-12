@@ -1,0 +1,117 @@
+<div class="twidget-container" id="twidget" style="position: relative;">
+    <nav class="search-form-tabs">
+      <ul class="search-form-tabs_list">
+        <li class="search-form-tabs-list_item item-flights active" role="tab-whitelabel_en" data-tab="flights">
+            <span ng-click="$ctrl.submit()" role="tab-whitelabel_en" data-tab="flights">FLIGHTS</span>
+        </li>
+        <li class="search-form-tabs-list_item item-flights" role="tab-whitelabel_en" data-tab="hotels">
+            <span role="tab-whitelabel_en" data-tab="hotels">HOTELS</span>
+        </li>
+      </ul>
+    </nav>
+    <div class="twidget-tab-content change-area">
+        <form ng-submit="$ctrl.submit()" class="simple-form">
+            <ul class="twidget-form-list clearfix">
+                <li class="twidget-origin twidget-city">
+                    <city-autocomplete
+                            value="$ctrl.data.origin"
+                            data-key="'origin'"
+                            label="'avia_input_origin_label'">
+                    </city-autocomplete>
+                </li>
+                <li class="twidget-destination twidget-city">
+                    <city-autocomplete
+                            value="$ctrl.data.destination"
+                            data-key="'destination'"
+                            label="'avia_input_destination_label'">
+                    </city-autocomplete>
+                </li>
+                <li class="twidget-flight-dates input-daterange input-group clearfix">
+                    <search-form-datepicker-input
+                            class="twidget-dep-date twidget-form-item"
+                            label="'avia_input_date_start'"
+                            dates="$ctrl.data"
+                            value="$ctrl.data.depart_date"
+                            key="'rangeStart'"
+                    ></search-form-datepicker-input>
+                    <search-form-datepicker-input
+                            class="twidget-return-date twidget-form-item"
+                            label="'avia_input_date_end'"
+                            dates="$ctrl.data"
+                            value="$ctrl.data.return_date"
+                            key="'rangeEnd'"
+                    ></search-form-datepicker-input>
+                </li>
+                <li class="twidget-another">
+                    <div class="twidget-add-another-flight">Add another flight</div>
+                </li>
+                <li class="twidget-passengers">
+                    <passengers
+                            form-data="$ctrl.data"
+                            passengers="$ctrl.data.passengers"
+                            trip-class="$ctrl.data.trip_class"></passengers>
+                </li>
+                <li class="twidget-submit-button">
+                    <button>{{$ctrl.translate('avia_submit_button_text')}}</button>
+                </li>
+            </ul>
+        </form>
+        <form ng-submit="$ctrl.submit()" class="multi-city-form hide-item">
+                <ul class="twidget-form-list clearfix">
+                    <li ng-repeat="(key,city) in $ctrl.citys" class="multi-city-route-item">
+                        <ul class="twidget-form-list clearfix">
+                            <li class="twidget-origin twidget-city">
+                                <city-autocomplete
+                                        value="$ctrl.data.origin"
+                                        data-key="'origin'"
+                                        label="'avia_input_origin_label'">
+                                </city-autocomplete>
+                            </li>
+                            <li class="twidget-destination twidget-city">
+                                <city-autocomplete
+                                        value="$ctrl.data.destination"
+                                        data-key="'destination'"
+                                        label="'avia_input_destination_label'">
+                                </city-autocomplete>
+                            </li>
+                            <li class="twidget-flight-dates input-daterange input-group clearfix">
+                                <search-form-datepicker-input
+                                        class="twidget-dep-date twidget-form-item"
+                                        label="'avia_input_date_start'"
+                                        dates="$ctrl.data"
+                                        value="$ctrl.data.depart_date"
+                                        key="'rangeStart'"
+                                ></search-form-datepicker-input>
+                                <search-form-datepicker-input
+                                        class="twidget-return-date twidget-form-item"
+                                        label="'avia_input_date_end'"
+                                        dates="$ctrl.data"
+                                        value="$ctrl.data.return_date"
+                                        key="'rangeEnd'"
+                                ></search-form-datepicker-input>
+                            </li>
+                            <li class="twidget-remove-row">
+                                <span class="mewtwo-flights-multi-segment-remove" ng-click="$ctrl.remove_multi_row(key)" data-id={{city}}></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="twidget-another">
+                        <div class="twidget-add-another-flight"  ng-click="$ctrl.add_multi_row()">Add another flight</div>
+                    </li>
+                    <li class="twidget-passengers">
+                        <passengers
+                                form-data="$ctrl.data"
+                                passengers="$ctrl.data.passengers"
+                                trip-class="$ctrl.data.trip_class"></passengers>
+                    </li>
+                    <li class="twidget-submit-button">
+                        <button>{{$ctrl.translate('avia_submit_button_text')}}</button>
+                    </li>
+                </ul>
+            </form>
+        <div id="flights-to-multi" class="flights-to-multi" ng-click="$ctrl.show_flights()">
+            <div class="twidget-flights-link_to_multi">Multi-city route</div>
+        </div>
+    </div>
+    
+</div>
